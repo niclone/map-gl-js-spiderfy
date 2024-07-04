@@ -1,5 +1,5 @@
-import Spiderfy from './Spiderfy';
-import { calcAngleDegrees, generateLegImage } from './utils/helpers';
+import Spiderfy from './Spiderfy.js';
+import { calcAngleDegrees, generateLegImage } from './utils/helpers.js';
 
 class SpiderfyFlat extends Spiderfy {
   _createSpiderfyLayers(layerId, features, clusterCoords) {

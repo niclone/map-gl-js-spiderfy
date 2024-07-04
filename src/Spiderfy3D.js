@@ -1,4 +1,4 @@
-import Spiderfy from './Spiderfy';
+import Spiderfy from './Spiderfy.js';
 
 class Spiderfy3D extends Spiderfy {
   constructor(map, options) {

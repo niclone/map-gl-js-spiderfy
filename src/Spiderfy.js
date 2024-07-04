@@ -1,5 +1,5 @@
-import defaultOptions from './constants/default-options';
-import { findAsync, getClusterLeavesAsync } from './utils/helpers';
+import defaultOptions from './constants/default-options.js';
+import { findAsync, getClusterLeavesAsync } from './utils/helpers.js';
 
 class Spiderfy {
   constructor(map, options) {
