@@ -77,7 +77,9 @@ class SpiderfyFlat extends Spiderfy {
           ...(spiderLeavesLayout),
           ...(!spiderLeavesLayout ? layout : {}),
           'icon-allow-overlap': true,
+          'text-allow-overlap': true,
           'icon-offset': point,
+          'text-offset': [point[0]/12, point[1]/12],
         },
         paint: {
           ...(spiderLeavesPaint),
