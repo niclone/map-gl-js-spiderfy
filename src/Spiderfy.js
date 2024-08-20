@@ -31,15 +31,20 @@ class Spiderfy {
     const source = this.map.getSource(layer.source);
 
     this.map.once('idle', () => {
-      const layout = {};
-      const paint = {};
+      const layout = layer.layout?._values ? {} : (layer.layout || {});
+      const paint = layer.paint?._values ? {} : (layer.paint || {});
 
-      Object.keys(layer.layout._values).forEach((key) => {
-        layout[key] = layer.layout._values[key]?.value?.value || layer.layout._values[key];
-      });
-      Object.keys(layer.paint._values).forEach((key) => {
-        paint[key] = layer.paint._values[key]?.value?.value || layer.paint._values[key];
-      });
+      if (layer.layout?._values) {
+        Object.keys(layer.layout._values).forEach((key) => {
+          layout[key] = layer.layout._values[key]?.value?.value || layer.layout._values[key];
+        });
+      }
+
+      if (layer.paint?._values) {
+        Object.keys(layer.paint._values).forEach((key) => {
+          paint[key] = layer.paint._values[key]?.value?.value || layer.paint._values[key];
+        });
+      }
 
       this.map.on('click', (e) => {
         const { maxLeaves, closeOnLeafClick, minZoomLevel, zoomIncrement } = this.options;
